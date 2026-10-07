@@ -1,0 +1,58 @@
+# eyesclosed: a minimal low-chroma theme
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+command_timeout = 5000
+
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$mise\
+$line_break\
+$shell\
+$character"""
+
+[directory]
+style = "#CDCFD1"
+[shell]
+disabled = false
+style = "#666A7A"
+format = "[$indicator]($style)"
+nu_indicator = ""
+zsh_indicator = "zsh "
+bash_indicator = "bash "
+
+[character]
+success_symbol = "[❯](#7498AE)"
+error_symbol = "[❯](#FFA59B)"
+vimcmd_symbol = "[❮](#B2C4C8)"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "#868A9B"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)]($style)($ahead_behind$stashed)]($style) "
+style = "#7498AE"
+conflicted = ""
+untracked = "​"
+modified = ""
+staged = ""
+renamed = ""
+deleted = ""
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "#868A9B"
+
+[mise]
+format = "[$symbol $health]($style) "
+disabled = false
+symbol = "mise"
+healthy_symbol = "✔︎"
+unhealthy_symbol = "✘"
+style = "#666A7A"
