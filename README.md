@@ -2,4 +2,4 @@
 
 low-chroma theme for minimalists
 
-![palette](./assets/palette.svg)
+<img src="./assets/palette.svg" width="300" alt="palette">
