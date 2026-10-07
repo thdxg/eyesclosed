@@ -16,27 +16,27 @@ $shell\
 $character"""
 
 [directory]
-style = "#CDCFD1"
+style = "#D1D3D4"
 [shell]
 disabled = false
-style = "#666A7A"
+style = "#696D7D"
 format = "[$indicator]($style)"
 nu_indicator = ""
 zsh_indicator = "zsh "
 bash_indicator = "bash "
 
 [character]
-success_symbol = "[❯](#7498AE)"
-error_symbol = "[❯](#FFA59B)"
-vimcmd_symbol = "[❮](#B2C4C8)"
+success_symbol = "[❯](#779BB0)"
+error_symbol = "[❯](#FFABA2)"
+vimcmd_symbol = "[❮](#B7C8CB)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "#868A9B"
+style = "#898D9E"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)]($style)($ahead_behind$stashed)]($style) "
-style = "#7498AE"
+style = "#779BB0"
 conflicted = ""
 untracked = "​"
 modified = ""
@@ -47,7 +47,7 @@ stashed = "≡"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "#868A9B"
+style = "#898D9E"
 
 [mise]
 format = "[$symbol $health]($style) "
@@ -55,4 +55,4 @@ disabled = false
 symbol = "mise"
 healthy_symbol = "✔︎"
 unhealthy_symbol = "✘"
-style = "#666A7A"
+style = "#696D7D"
