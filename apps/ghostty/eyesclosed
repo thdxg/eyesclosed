@@ -1,4 +1,5 @@
-# eyesclosed: low-chroma theme for minimalists
+# eyesclosed: a minimal low-chroma theme
+
 background = #0B0D0E
 foreground = #B7B8C4
 cursor-color = #C9CBCE

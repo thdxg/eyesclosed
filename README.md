@@ -2,6 +2,6 @@
 
 # eyesclosed
 
-low-chroma theme for minimalists
+a minimal low-chroma theme
 
 <img src="./palette.svg" width="300" alt="palette">

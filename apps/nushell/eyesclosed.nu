@@ -1,4 +1,4 @@
-# eyesclosed: low-chroma theme for minimalists
+# eyesclosed: a minimal low-chroma theme
 
 $env.config.color_config = {
     separator: "#393B48"

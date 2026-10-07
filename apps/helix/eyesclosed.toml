@@ -1,4 +1,5 @@
-# eyesclosed: low-chroma theme for minimalists
+# eyesclosed: a minimal low-chroma theme
+
 "variable" = { fg = "variable" }
 "variable.parameter" = { fg = "parameter" }
 "variable.other.member" = { fg = "property" }
