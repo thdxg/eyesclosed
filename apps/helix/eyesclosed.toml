@@ -1,0 +1,128 @@
+# eyesclosed: low-chroma theme for minimalists
+"variable" = { fg = "variable" }
+"variable.parameter" = { fg = "parameter" }
+"variable.other.member" = { fg = "property" }
+"variable.builtin" = { fg = "selfvar", modifiers = ["italic"] }
+"keyword" = { fg = "keyword", modifiers = ["bold"] }
+"function" = { fg = "function" }
+"function.macro" = { fg = "macro", modifiers = ["italic"] }
+"type" = { fg = "type" }
+"type.builtin" = { fg = "builtin" }
+"constructor" = { fg = "type" }
+"constant" = { fg = "constant" }
+"constant.numeric" = { fg = "constant" }
+"constant.builtin" = { fg = "constant" }
+"constant.character.escape" = { fg = "escape", modifiers = ["bold"] }
+"string" = { fg = "string" }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc", modifiers = ["italic"] }
+"comment.line.documentation" = { fg = "doc", modifiers = ["italic"] }
+"attribute" = { fg = "attribute" }
+"label" = { fg = "lifetime", modifiers = ["italic"] }
+"namespace" = { fg = "namespace" }
+"operator" = { fg = "operator" }
+"punctuation" = { fg = "punct" }
+"markup.heading" = { fg = "md-heading", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "md-hmark" }
+"markup.bold" = { fg = "md-bold", modifiers = ["bold"] }
+"markup.italic" = { fg = "md-italic", modifiers = ["italic"] }
+"markup.raw" = { fg = "md-code" }
+"markup.link.text" = { fg = "md-link", modifiers = ["underlined"] }
+"markup.link.url" = { fg = "md-url" }
+"markup.list" = { fg = "md-list" }
+"markup.quote" = { fg = "md-quote", modifiers = ["italic"] }
+
+"ui.background" = { bg = "bg" }
+"ui.text" = { fg = "text" }
+"ui.text.focus" = { fg = "function", bg = "focus-bg", modifiers = ["bold"] }
+"ui.highlight" = { bg = "focus-bg" }
+"special" = { fg = "constant", modifiers = ["bold"] }
+"ui.cursor" = { fg = "bg", bg = "linenr-active" }
+"ui.cursor.primary" = { fg = "bg", bg = "cursor" }
+"ui.cursor.match" = { fg = "function", modifiers = ["underlined"] }
+"ui.cursorline.primary" = { bg = "cursorline" }
+"ui.selection" = { bg = "selection" }
+"ui.linenr" = { fg = "linenr" }
+"ui.linenr.selected" = { fg = "linenr-active" }
+"ui.statusline" = { fg = "status-fg", bg = "bg-alt" }
+"ui.statusline.inactive" = { fg = "linenr", bg = "bg-alt" }
+"ui.statusline.normal" = { fg = "bg", bg = "mode", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "warning", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "function", modifiers = ["bold"] }
+"ui.popup" = { fg = "text", bg = "bg-alt" }
+"ui.help" = { fg = "text", bg = "bg-alt" }
+"ui.menu" = { fg = "text", bg = "bg-alt" }
+"ui.menu.selected" = { fg = "function", bg = "focus-bg", modifiers = ["bold"] }
+"ui.window" = { fg = "linenr" }
+"ui.virtual.whitespace" = { fg = "indent" }
+"ui.virtual.indent-guide" = { fg = "indent" }
+"ui.virtual.ruler" = { bg = "cursorline" }
+"ui.virtual.inlay-hint" = { fg = "inlay", modifiers = ["italic"] }
+"ui.virtual.jump-label" = { fg = "cursor", modifiers = ["bold"] }
+
+"diff.plus" = { fg = "added" }
+"diff.delta" = { fg = "modified" }
+"diff.minus" = { fg = "removed" }
+
+"error" = { fg = "error", modifiers = ["bold"] }
+"warning" = { fg = "warning", modifiers = ["bold"] }
+"info" = { fg = "info", modifiers = ["bold"] }
+"hint" = { fg = "hint", modifiers = ["bold"] }
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "dashed" } }
+"diagnostic.info" = { underline = { color = "info", style = "dotted" } }
+"diagnostic.hint" = { underline = { color = "hint", style = "dotted" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+[palette]
+bg = "#0B0D0E"
+bg-alt = "#14161B"
+cursorline = "#121217"
+selection = "#323644"
+focus-bg = "#404451"
+linenr = "#393B48"
+linenr-active = "#9496A8"
+cursor = "#C9CBCE"
+indent = "#191A20"
+status-fg = "#9496A8"
+mode = "#7498AE"
+inlay = "#4E505F"
+error = "#FFA59B"
+warning = "#BF8A5A"
+info = "#99B3C0"
+hint = "#7B7C93"
+added = "#5C7684"
+removed = "#8E625A"
+modified = "#58616E"
+text = "#B7B8C4"
+variable = "#B7B8C4"
+parameter = "#B6B2C8"
+property = "#9FA2B2"
+keyword = "#7498AE"
+function = "#D5CCCC"
+type = "#B2C4C8"
+builtin = "#8EA2A7"
+selfvar = "#AA94A6"
+constant = "#EAD3A5"
+string = "#D6C7A8"
+escape = "#EAD3A5"
+comment = "#666A7A"
+doc = "#868A9B"
+macro = "#B2C4C8"
+attribute = "#7B7B92"
+lifetime = "#BAAEB6"
+namespace = "#8E91A2"
+operator = "#8A8C9E"
+punct = "#5B5E6D"
+md-heading = "#D3CEE4"
+md-hmark = "#7C849C"
+md-bold = "#E0D4D4"
+md-italic = "#B7B8C4"
+md-code = "#D6C7A8"
+md-link = "#B1C8D0"
+md-url = "#5B5E6D"
+md-list = "#7498AE"
+md-quote = "#868A9B"
+md-fence = "#5B5E6D"
+md-rule = "#2A2D37"

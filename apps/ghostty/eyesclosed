@@ -1,0 +1,23 @@
+# eyesclosed: low-chroma theme for minimalists
+background = #0B0D0E
+foreground = #B7B8C4
+cursor-color = #C9CBCE
+cursor-text = #0B0D0E
+selection-background = #323644
+selection-foreground = #D5CCCC
+palette = 0=#1B1C24
+palette = 1=#E29296
+palette = 2=#76A4AC
+palette = 3=#DCC396
+palette = 4=#99B3C0
+palette = 5=#8E84A6
+palette = 6=#D4D6D7
+palette = 7=#BEC0CC
+palette = 8=#444656
+palette = 9=#ECA8AC
+palette = 10=#90B9C0
+palette = 11=#E8D3AD
+palette = 12=#B4CAD6
+palette = 13=#A9A0C1
+palette = 14=#E6E6E6
+palette = 15=#E4E5ED
