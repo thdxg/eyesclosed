@@ -2,4 +2,6 @@
 
 low-chroma theme for minimalists
 
-<img src="./assets/palette.svg" width="300" alt="palette">
+<img src="./palette.svg" width="300" alt="palette">
+
+![wallpaper](./wallpaper/moonrise.jpg)
