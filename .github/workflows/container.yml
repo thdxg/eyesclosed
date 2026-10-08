@@ -1,0 +1,39 @@
+name: container
+
+# Builds the site image for arm64 with Podman on every push and pull request,
+# and pushes it to ghcr.io from main.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install Podman
+        run: command -v podman || (sudo apt-get update && sudo apt-get install -y podman)
+
+      - name: Build
+        run: |
+          podman build --platform linux/arm64 -f Containerfile \
+            -t "$IMAGE:${{ github.sha }}" -t "$IMAGE:latest" .
+
+      - name: Push
+        if: github.ref == 'refs/heads/main'
+        env:
+          REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "$REGISTRY_PASSWORD" | podman login ghcr.io -u "${{ github.actor }}" --password-stdin
+          podman push "$IMAGE:${{ github.sha }}"
+          podman push "$IMAGE:latest"
