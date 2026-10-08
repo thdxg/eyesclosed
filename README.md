@@ -2,6 +2,6 @@
 
 # eyesclosed
 
-a low-chroma dark theme
+A low-chroma dark theme
 
 <img src="./palette.svg" width="300" alt="palette">
