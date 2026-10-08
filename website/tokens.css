@@ -88,8 +88,8 @@
   --ansi-14: #ebebeb;
   --ansi-15: #e9e9f0;
   --prompt-dir: #d1d3d4;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Fira Code", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;

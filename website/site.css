@@ -6,8 +6,8 @@
 .cover { margin: 0; }
 .cover > img {
   display: block; width: 100%; height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
-  mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
 }
 .ec-hero.cover-next { padding-top: var(--space-6); }
 .ec-hero-lede { max-width: var(--width-text); }
@@ -53,7 +53,7 @@
 .ec-code { background: var(--lid); color: var(--mist); }
 .tok-function { color: var(--blush); }
 .tok-constant { color: var(--candle); }
-.tok-escape { color: var(--candle); font-weight: 700; }
+.tok-escape { color: var(--candle); font-weight: 500; }
 .tok-string { color: var(--linen); }
 .tok-type { color: var(--frost); }
 .tok-macro { color: var(--frost); font-style: italic; }
@@ -61,7 +61,7 @@
 .tok-lifetime { color: var(--mist); font-style: italic; }
 .tok-property, .tok-namespace, .tok-operator, .tok-builtin, .tok-attribute { color: var(--ash); }
 .tok-doc { color: var(--ash); font-style: italic; }
-.tok-keyword { color: var(--tide); font-weight: 700; }
+.tok-keyword { color: var(--tide); font-weight: 500; }
 .tok-selfvar { color: var(--tide); font-style: italic; }
 .tok-comment { color: var(--haze); font-style: italic; }
 .tok-punct { color: var(--haze); }
