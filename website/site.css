@@ -6,8 +6,8 @@
 .cover { margin: 0; }
 .cover > img {
   display: block; width: 100%; height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent);
 }
 .ec-hero.cover-next { padding-top: var(--space-6); }
 .ec-hero-lede { max-width: var(--width-text); }
