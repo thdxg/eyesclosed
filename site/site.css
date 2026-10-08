@@ -1,0 +1,66 @@
+/* eyesclosed site — the few pieces bundle.css doesn't carry. Load after it. */
+
+/* The wallpaper opens the page edge to edge and fades into it toward the bottom,
+   so the hero needs less air above it. */
+.cover { margin: 0; }
+.cover > img {
+  display: block; width: 100%; height: clamp(220px, 36vw, 520px); object-fit: cover; object-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent);
+}
+.ec-hero.cover-next { padding-top: var(--space-6); }
+.ec-hero-lede { max-width: var(--width-text); }
+
+/* ── Tabs: a row of words, like the nav. The current one is ink-bright. ── */
+.tabs { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); font-size: 14px; line-height: 20px; }
+.tabs[hidden] { display: none; }
+.tabs button {
+  appearance: none; margin: 0; padding: 0; border: 0; background: none;
+  font: inherit; color: var(--ink-muted); cursor: pointer; transition: color 0.15s;
+}
+.tabs button:hover, .tabs button[aria-selected="true"] { color: var(--ink-bright); }
+
+/* ── Palette table ────────────────────────────────────────────────────── */
+.swatch {
+  display: inline-block; width: 16px; height: 16px; margin-right: var(--space-2); vertical-align: -3px;
+  border-radius: var(--radius-sm); background: var(--c);
+  box-shadow: inset 0 0 0 1px var(--rule-strong);
+}
+.ec-table td.name { white-space: nowrap; }
+
+/* Color values copy on click; "Copied" sits over the value so the width never shifts. */
+.copy-value {
+  position: relative; appearance: none; margin: 0; padding: 0; border: 0; background: none;
+  font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--ink); white-space: nowrap;
+  cursor: pointer; transition: color 0.15s;
+}
+.copy-value:hover { color: var(--ink-bright); }
+.copy-value::after { content: "Copied"; position: absolute; left: 0; top: 0; color: var(--ink-bright); visibility: hidden; }
+.copy-value.copied span { visibility: hidden; }
+.copy-value.copied::after { visibility: visible; }
+
+/* ── Code ─────────────────────────────────────────────────────────────── */
+.ec-code pre { tab-size: 4; }
+
+/* The theme's 15 named colors (SPEC.md). The code preview uses these, scope for scope
+   as themes/helix/eyesclosed.toml maps them, overriding the bundle's older syntax colors. */
+:root {
+  --night: #111214; --lid: #1a1b21; --shade: #383b4a; --glow: #464957; --haze: #696d7d;
+  --ash: #9a9dae; --mist: #bbbcc7; --moon: #cdcfd1; --tide: #779bb0; --frost: #b7c8cb;
+  --blush: #d8d0d0; --linen: #d9cbae; --candle: #ecd8ae; --ember: #c18e5f; --flare: #ffaba2;
+}
+.ec-code { background: var(--lid); color: var(--mist); }
+.tok-function { color: var(--blush); }
+.tok-constant { color: var(--candle); }
+.tok-escape { color: var(--candle); font-weight: 700; }
+.tok-string { color: var(--linen); }
+.tok-type { color: var(--frost); }
+.tok-macro { color: var(--frost); font-style: italic; }
+.tok-variable, .tok-parameter { color: var(--mist); }
+.tok-lifetime { color: var(--mist); font-style: italic; }
+.tok-property, .tok-namespace, .tok-operator, .tok-builtin, .tok-attribute { color: var(--ash); }
+.tok-doc { color: var(--ash); font-style: italic; }
+.tok-keyword { color: var(--tide); font-weight: 700; }
+.tok-selfvar { color: var(--tide); font-style: italic; }
+.tok-comment { color: var(--haze); font-style: italic; }
+.tok-punct { color: var(--haze); }
