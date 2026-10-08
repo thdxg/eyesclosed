@@ -1,4 +1,4 @@
-# eyesclosed: a minimal low-chroma theme
+# eyesclosed: a low-chroma dark theme
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -16,7 +16,7 @@ $shell\
 $character"""
 
 [directory]
-style = "#D1D3D4"
+style = "#CDCFD1"
 [shell]
 disabled = false
 style = "#696D7D"
@@ -32,22 +32,22 @@ vimcmd_symbol = "[❮](#B7C8CB)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "#898D9E"
+style = "#9A9DAE"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)]($style)($ahead_behind$stashed)]($style) "
 style = "#779BB0"
-conflicted = ""
-untracked = "​"
-modified = ""
-staged = ""
-renamed = ""
-deleted = ""
+conflicted = "‎ "
+untracked = "‎ "
+modified = "‎ "
+staged = "‎ "
+renamed = "‎ "
+deleted = "‎ "
 stashed = "≡"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "#898D9E"
+style = "#9A9DAE"
 
 [mise]
 format = "[$symbol $health]($style) "

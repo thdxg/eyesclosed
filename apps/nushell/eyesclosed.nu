@@ -1,7 +1,7 @@
-# eyesclosed: a minimal low-chroma theme
+# eyesclosed: a low-chroma dark theme
 
 $env.config.color_config = {
-    separator: "#3B3D4A"
+    separator: "#383B4A"
     leading_trailing_space_bg: { attr: n }
     header: { fg: "#779BB0" attr: b }
     row_index: "#696D7D"
@@ -16,10 +16,10 @@ $env.config.color_config = {
     bool: "#ECD8AE"
     filesize: "#BBBCC7"
     duration: "#BBBCC7"
-    datetime: "#898D9E"
-    range: "#8D8FA0"
+    datetime: "#9A9DAE"
+    range: "#9A9DAE"
     nothing: "#696D7D"
-    binary: "#898D9E"
+    binary: "#9A9DAE"
     cell-path: "#BBBCC7"
     record: "#BBBCC7"
     list: "#BBBCC7"
@@ -32,7 +32,7 @@ $env.config.color_config = {
     shape_external: "#D8D0D0"
     shape_external_resolved: "#D8D0D0"
     shape_externalarg: "#BBBCC7"
-    shape_flag: "#91A5AA"
+    shape_flag: "#9A9DAE"
     shape_signature: "#B7C8CB"
     shape_string: "#D9CBAE"
     shape_string_interpolation: "#D9CBAE"
@@ -52,15 +52,15 @@ $env.config.color_config = {
     shape_globpattern: "#BBBCC7"
     shape_match_pattern: "#BBBCC7"
     shape_custom: "#BBBCC7"
-    shape_operator: "#8D8FA0"
-    shape_pipe: "#8D8FA0"
-    shape_redirection: "#8D8FA0"
-    shape_range: "#8D8FA0"
-    shape_block: "#898D9E"
-    shape_closure: "#898D9E"
-    shape_record: "#898D9E"
-    shape_list: "#898D9E"
-    shape_table: "#898D9E"
+    shape_operator: "#9A9DAE"
+    shape_pipe: "#9A9DAE"
+    shape_redirection: "#9A9DAE"
+    shape_range: "#9A9DAE"
+    shape_block: "#9A9DAE"
+    shape_closure: "#9A9DAE"
+    shape_record: "#9A9DAE"
+    shape_list: "#9A9DAE"
+    shape_table: "#9A9DAE"
     shape_matching_brackets: { attr: u }
     shape_garbage: { fg: "#FFABA2" attr: u }
 }
@@ -73,8 +73,8 @@ $env.LS_COLORS = ([
     "ex=38;2;236;216;174"
     "or=38;2;255;171;162"
     "mi=38;2;255;171;162"
-    "pi=38;2;137;141;158"
-    "so=38;2;137;141;158"
-    "bd=38;2;137;141;158"
-    "cd=38;2;137;141;158"
+    "pi=38;2;154;157;174"
+    "so=38;2;154;157;174"
+    "bd=38;2;154;157;174"
+    "cd=38;2;154;157;174"
 ] | str join ":")

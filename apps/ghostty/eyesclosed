@@ -1,4 +1,4 @@
-# eyesclosed: a minimal low-chroma theme
+# eyesclosed: a low-chroma dark theme
 
 background = #111214
 foreground = #BBBCC7
@@ -6,19 +6,19 @@ cursor-color = #CDCFD1
 cursor-text = #111214
 selection-background = #383B4A
 selection-foreground = #D8D0D0
-palette = 0=#21212A
-palette = 1=#E3979B
-palette = 2=#7AA7AE
-palette = 3=#DEC79C
-palette = 4=#9EB6C3
-palette = 5=#9187A8
-palette = 6=#D8DADB
-palette = 7=#C2C4CF
-palette = 8=#4A4B5C
-palette = 9=#EDADB1
-palette = 10=#95BCC3
-palette = 11=#EAD8B6
-palette = 12=#B9CED9
-palette = 13=#ACA4C3
-palette = 14=#EBEBEB
-palette = 15=#E9E9F0
+palette = 0=#383B4A
+palette = 1=#FFABA2
+palette = 2=#779BB0
+palette = 3=#ECD8AE
+palette = 4=#B7C8CB
+palette = 5=#9A9DAE
+palette = 6=#D8D0D0
+palette = 7=#BBBCC7
+palette = 8=#696D7D
+palette = 9=#FFABA2
+palette = 10=#779BB0
+palette = 11=#ECD8AE
+palette = 12=#B7C8CB
+palette = 13=#9A9DAE
+palette = 14=#D8D0D0
+palette = 15=#CDCFD1
