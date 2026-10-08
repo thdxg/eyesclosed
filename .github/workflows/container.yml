@@ -26,8 +26,8 @@ jobs:
 
       - name: Build
         run: |
-          podman build --platform linux/arm64 -f Containerfile \
-            -t "$IMAGE:${{ github.sha }}" -t "$IMAGE:latest" .
+          podman build --platform linux/arm64 \
+            -t "$IMAGE:${{ github.sha }}" -t "$IMAGE:latest" website
 
       - name: Push
         if: github.ref == 'refs/heads/main'

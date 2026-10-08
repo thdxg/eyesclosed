@@ -1,6 +1,7 @@
 # The eyesclosed site: static files served by nginx on port 80.
+# Build from this directory: podman build website
 FROM docker.io/library/nginx:1.30.5-alpine
 
-COPY website/ /usr/share/nginx/html/
+COPY . /usr/share/nginx/html/
 
 EXPOSE 80

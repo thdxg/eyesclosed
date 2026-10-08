@@ -1,0 +1,3 @@
+# The build files themselves stay out of the image.
+Containerfile
+.containerignore
