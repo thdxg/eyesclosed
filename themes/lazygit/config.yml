@@ -1,0 +1,37 @@
+# eyesclosed: a minimal low-chroma theme
+# Merge into ~/Library/Application Support/lazygit/config.yml (macOS)
+# or ~/.config/lazygit/config.yml.
+gui:
+  theme:
+    activeBorderColor:
+      - "#779BB0"
+      - bold
+    inactiveBorderColor:
+      - "#383B4A"
+    searchingActiveBorderColor:
+      - "#ECD8AE"
+      - bold
+    optionsTextColor:
+      - "#9A9DAE"
+    selectedLineBgColor:
+      - "#1A1B21"
+    inactiveViewSelectedLineBgColor:
+      - "#1A1B21"
+    cherryPickedCommitFgColor:
+      - "#B7C8CB"
+    cherryPickedCommitBgColor:
+      - "#383B4A"
+    markedBaseCommitFgColor:
+      - "#B7C8CB"
+    markedBaseCommitBgColor:
+      - "#383B4A"
+    unstagedChangesColor:
+      - "#C18E5F"
+    defaultFgColor:
+      - "#BBBCC7"
+  authorColors:
+    "*": "#9A9DAE"
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never

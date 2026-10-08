@@ -1,0 +1,39 @@
+# eyesclosed: a minimal low-chroma theme
+# Include from ~/.gitconfig:
+#   [include]
+#       path = ~/dev/eyesclosed/themes/delta/eyesclosed.gitconfig
+#   [delta]
+#       features = eyesclosed
+# Needs the bat theme installed (themes/bat) for syntax-theme.
+# Removed lines are drawn dim (haze, no syntax); added lines keep full syntax colors,
+# so the difference reads by brightness, not red vs green.
+
+[delta "eyesclosed"]
+    dark = true
+    syntax-theme = eyesclosed
+    minus-style = "#696D7D #1A1B21"
+    minus-emph-style = "#C18E5F #383B4A"
+    minus-empty-line-marker-style = "normal #1A1B21"
+    plus-style = "syntax #1A1B21"
+    plus-emph-style = "syntax #383B4A bold"
+    plus-empty-line-marker-style = "normal #1A1B21"
+    zero-style = "syntax"
+    whitespace-error-style = "#FFABA2 reverse"
+    line-numbers = true
+    line-numbers-minus-style = "#C18E5F"
+    line-numbers-plus-style = "#779BB0"
+    line-numbers-zero-style = "#383B4A"
+    line-numbers-left-style = "#383B4A"
+    line-numbers-right-style = "#383B4A"
+    file-style = "#CDCFD1 bold"
+    file-decoration-style = "#383B4A ul"
+    hunk-header-style = "file line-number syntax"
+    hunk-header-decoration-style = "#383B4A box"
+    hunk-header-file-style = "#9A9DAE"
+    hunk-header-line-number-style = "#696D7D"
+    commit-style = "#ECD8AE"
+    commit-decoration-style = "#383B4A ul"
+    blame-palette = "#111214 #1A1B21"
+    merge-conflict-begin-symbol = "~"
+    merge-conflict-ours-diff-header-style = "#ECD8AE bold"
+    merge-conflict-theirs-diff-header-style = "#B7C8CB bold"

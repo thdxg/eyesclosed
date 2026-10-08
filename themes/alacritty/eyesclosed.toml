@@ -1,0 +1,59 @@
+# eyesclosed: a minimal low-chroma theme
+# In alacritty.toml:  [general] import = ["~/dev/eyesclosed/themes/alacritty/eyesclosed.toml"]
+
+[colors.primary]
+background = "#111214"
+foreground = "#BBBCC7"
+bright_foreground = "#CDCFD1"
+
+[colors.cursor]
+text = "#111214"
+cursor = "#CDCFD1"
+
+[colors.vi_mode_cursor]
+text = "#111214"
+cursor = "#779BB0"
+
+[colors.selection]
+text = "CellForeground"
+background = "#383B4A"
+
+[colors.search.matches]
+foreground = "#BBBCC7"
+background = "#464957"
+
+[colors.search.focused_match]
+foreground = "#111214"
+background = "#ECD8AE"
+
+[colors.footer_bar]
+foreground = "#9A9DAE"
+background = "#1A1B21"
+
+[colors.hints.start]
+foreground = "#111214"
+background = "#ECD8AE"
+
+[colors.hints.end]
+foreground = "#111214"
+background = "#9A9DAE"
+
+[colors.normal]
+black = "#383B4A"
+red = "#FFABA2"
+green = "#779BB0"
+yellow = "#ECD8AE"
+blue = "#B7C8CB"
+magenta = "#9A9DAE"
+cyan = "#D8D0D0"
+white = "#BBBCC7"
+
+[colors.bright]
+black = "#696D7D"
+red = "#FFABA2"
+green = "#779BB0"
+yellow = "#ECD8AE"
+blue = "#B7C8CB"
+magenta = "#9A9DAE"
+cyan = "#D8D0D0"
+white = "#CDCFD1"

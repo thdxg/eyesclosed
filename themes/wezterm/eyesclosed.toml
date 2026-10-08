@@ -1,0 +1,47 @@
+# eyesclosed: a minimal low-chroma theme
+# Copy to ~/.config/wezterm/colors/eyesclosed.toml, then in wezterm.lua:
+#   config.color_scheme = 'eyesclosed'
+
+[colors]
+foreground = "#BBBCC7"
+background = "#111214"
+cursor_bg = "#CDCFD1"
+cursor_fg = "#111214"
+cursor_border = "#CDCFD1"
+selection_fg = "none"
+selection_bg = "#383B4A"
+scrollbar_thumb = "#383B4A"
+split = "#383B4A"
+compose_cursor = "#ECD8AE"
+visual_bell = "#1A1B21"
+ansi = ["#383B4A", "#FFABA2", "#779BB0", "#ECD8AE", "#B7C8CB", "#9A9DAE", "#D8D0D0", "#BBBCC7"]
+brights = ["#696D7D", "#FFABA2", "#779BB0", "#ECD8AE", "#B7C8CB", "#9A9DAE", "#D8D0D0", "#CDCFD1"]
+
+[colors.tab_bar]
+background = "#1A1B21"
+inactive_tab_edge = "#1A1B21"
+
+[colors.tab_bar.active_tab]
+bg_color = "#111214"
+fg_color = "#CDCFD1"
+intensity = "Bold"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#1A1B21"
+fg_color = "#696D7D"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#383B4A"
+fg_color = "#BBBCC7"
+
+[colors.tab_bar.new_tab]
+bg_color = "#1A1B21"
+fg_color = "#696D7D"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#383B4A"
+fg_color = "#BBBCC7"
+
+[metadata]
+name = "eyesclosed"
+author = "thdxg"
