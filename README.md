@@ -1,4 +1,4 @@
-![wallpaper](./wallpaper/moonrise.jpg)
+![wallpaper](./photos/moonrise.jpg)
 
 # eyesclosed
 
