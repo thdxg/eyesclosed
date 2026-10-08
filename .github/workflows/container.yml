@@ -1,39 +1,91 @@
 name: container
 
-# Builds the site image for arm64 with Podman on every push and pull request,
-# and pushes it to ghcr.io from main.
+# Builds the website image (website/Containerfile) with podman and publishes it
+# to ghcr.io. Pull requests build but push nothing, so a broken Containerfile is
+# caught before it can replace :latest.
+#
+# arm64 only, built natively on an arm64 runner: the cluster that runs the site
+# is arm64, and nothing else pulls the image.
+
 on:
   push:
     branches: [main]
+    paths:
+      - "website/**"
+      - ".github/workflows/container.yml"
   pull_request:
+    branches: [main]
+    paths:
+      - "website/**"
+      - ".github/workflows/container.yml"
   workflow_dispatch:
 
-permissions:
-  contents: read
-  packages: write
-
 env:
-  IMAGE: ghcr.io/${{ github.repository }}
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  LOCAL_IMAGE: localhost/eyesclosed-website:ci
+
+# A superseded push is never worth finishing: the image it would publish is
+# already stale. In-flight PR builds are cancelled the same way.
+concurrency:
+  group: container-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+      packages: write
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v7
 
       - name: Install Podman
         run: command -v podman || (sudo apt-get update && sudo apt-get install -y podman)
 
+      - name: Image metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          # Three tags, each with a job. :latest is what a human pulls;
+          # :sha-<short> is the way back to a specific build after a bad one;
+          # and the UTC timestamp tag is what the cluster deploys, because
+          # Flux's ImagePolicy picks the newest image by sorting tag strings
+          # (`alphabetical: asc`) and neither of the other two orders. Keep the
+          # timestamp first and zero-padded: that is what makes lexical order
+          # and chronological order the same thing. Changing this format means
+          # changing the `filterTags` pattern in the homelab repo's
+          # apps/eyesclosed/manifests/image.yaml to match.
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=sha
+            type=raw,value={{date 'YYYYMMDD-HHmmss' tz='UTC'}}-{{sha}},enable={{is_default_branch}}
+
       - name: Build
         run: |
-          podman build --platform linux/arm64 \
-            -t "$IMAGE:${{ github.sha }}" -t "$IMAGE:latest" website
+          labels=()
+          while IFS= read -r label; do
+            [ -n "$label" ] && labels+=(--label "$label")
+          done <<< "$DOCKER_METADATA_OUTPUT_LABELS"
+          podman build \
+            --platform linux/arm64 \
+            "${labels[@]}" \
+            --tag "$LOCAL_IMAGE" \
+            website
+
+      - name: Log in to ${{ env.REGISTRY }}
+        if: github.event_name != 'pull_request'
+        env:
+          ACTOR: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: printf '%s' "$TOKEN" | podman login "$REGISTRY" --username "$ACTOR" --password-stdin
 
       - name: Push
-        if: github.ref == 'refs/heads/main'
-        env:
-          REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        if: github.event_name != 'pull_request'
         run: |
-          echo "$REGISTRY_PASSWORD" | podman login ghcr.io -u "${{ github.actor }}" --password-stdin
-          podman push "$IMAGE:${{ github.sha }}"
-          podman push "$IMAGE:latest"
+          while IFS= read -r tag; do
+            podman push "$LOCAL_IMAGE" "docker://$tag"
+          done < <(jq -r '.tags[]' <<< "$DOCKER_METADATA_OUTPUT_JSON")
