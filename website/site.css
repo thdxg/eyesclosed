@@ -1,10 +1,11 @@
 /* eyesclosed site — the few pieces bundle.css doesn't carry. Load after it. */
 
 /* The wallpaper opens the page edge to edge and fades into it toward the bottom,
-   so the hero needs less air above it. */
+   so the hero needs less air above it. The files are already cropped to the sky
+   and treeline (14:5), so it scales with the width and shows the same at every size. */
 .cover { margin: 0; }
 .cover > img {
-  display: block; width: 100%; height: clamp(220px, 36vw, 520px); object-fit: cover; object-position: center top;
+  display: block; width: 100%; height: auto;
   -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
   mask-image: linear-gradient(to bottom, #000 40%, transparent);
 }
