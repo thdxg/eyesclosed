@@ -82,7 +82,8 @@ Severity is carried by underline shape as well as color. Diagnostic text is bold
 ## Terminal (ANSI 0–15)
 
 Bright variants reuse the normal colors, except black (8 = haze) and white (15 = moon).
-Foreground mist, cursor moon, selection shade.
+Foreground mist, cursor moon, selection shade. Selected text keeps its own color; where a
+terminal needs one fixed selected-text color, use mist.
 
 | #   | Name    | Color  | Bright # | Bright |
 | --- | ------- | ------ | -------- | ------ |
