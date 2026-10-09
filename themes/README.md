@@ -14,7 +14,7 @@ Every file here uses only the 15 colors in `../SPEC.md`. Paths below assume the 
 | fzf            | `fzf/eyesclosed.sh`, `fzf/eyesclosed.nu` | Source the one for your shell                                                                                          |
 | lazygit        | `lazygit/config.yml`                     | Merge into lazygit's `config.yml`                                                                                      |
 | tmux           | `tmux/eyesclosed.tmux.conf`              | `source-file` it from `~/.tmux.conf`                                                                                   |
-| Zed            | `zed/` (extension)                       | Install the "eyesclosed" extension, or copy `zed/themes/eyesclosed.json` to `~/.config/zed/themes/`; pick "eyesclosed" |
+| Zed            | `zed/` (extension)                       | Run `zed: extensions`, install "eyesclosed", then pick it with `theme selector: toggle`                                |
 | Neovim         | `nvim/colors/eyesclosed.lua`             | Copy to `~/.config/nvim/colors/`, `:colorscheme eyesclosed`                                                            |
 | Alacritty      | `alacritty/eyesclosed.toml`              | `[general] import = [...]` in `alacritty.toml`                                                                         |
 | Kitty          | `kitty/eyesclosed.conf`                  | `include` it from `kitty.conf`                                                                                         |
