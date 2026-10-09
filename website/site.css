@@ -1,67 +1,74 @@
 /* eyesclosed site — the few pieces bundle.css doesn't carry. Load after it. */
 
-/* The wallpaper opens the page edge to edge and fades into it toward the bottom,
-   so the hero needs less air above it. The files are already cropped to the sky
-   and treeline (14:5), so it scales with the width and shows the same at every size. */
-.cover { margin: 0; }
-.cover > img {
-  display: block; width: 100%; height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
-  mask-image: linear-gradient(to bottom, #000 80%, transparent);
-}
-.ec-hero.cover-next { padding-top: var(--space-6); }
-.ec-hero-lede { max-width: var(--width-text); }
+/* The page sits on night, the theme's own background, instead of the system's bg. */
+:root { --bg: #111214; }
 
-/* ── Tabs: a row of words, like the nav. The current one is ink-bright. ── */
-.tabs { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); font-size: 14px; line-height: 20px; }
-.tabs[hidden] { display: none; }
-.tabs button {
+.ec-hero { margin: 0; }
+
+/* ── One screen ───────────────────────────────────────────────────────────
+   On desktops the landing is a single screen that never scrolls: the statement
+   and the palette sit centered in the column, the footer at the bottom, the
+   panel on the right. Phones (and very short windows) scroll as usual, with the
+   hero filling the first screen. */
+@media (max-width: 1023px), (max-height: 599px) {
+  .ec-hero { display: flex; flex-direction: column; justify-content: center; min-height: 100svh; }
+}
+@media (min-width: 1024px) and (min-height: 600px) {
+  html, body { height: 100%; overflow: hidden; }
+  .ec-page { box-sizing: border-box; display: flex; flex-direction: column; height: 100svh; }
+  .ec-page > main { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: var(--space-16); }
+  .ec-footer { margin-top: 0; padding-bottom: var(--space-10); }
+}
+
+/* ── The panel: the wallpaper drifting left on its own, forever. The photo
+   alternates with its mirror image, so every seam matches; the track holds two
+   such pairs and slides by one pair, then starts over where it looks the same.
+   Desktops only; phones get the still photo under the hero. ── */
+.scroll-panel { display: none; }
+.hero-photo { display: block; width: 100%; height: auto; margin-top: var(--space-10); border-radius: var(--radius-md); }
+@media (min-width: 1024px) {
+  .ec-page { padding-right: calc(var(--ec-stage-w) + var(--space-16)); }
+  .scroll-panel {
+    display: block; position: fixed; top: var(--inset-stage); right: var(--inset-stage); bottom: var(--inset-stage);
+    width: var(--ec-stage-w); border-radius: var(--radius-md); overflow: hidden;
+  }
+  .scroll-track { display: flex; width: max-content; height: 100%; animation: drift 120s linear infinite; }
+  .scroll-track img { display: block; flex: none; width: auto; height: 100%; max-width: none; }
+  .scroll-track .flip { transform: scaleX(-1); }
+  .hero-photo { display: none; }
+}
+@keyframes drift { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .scroll-track { animation: none; } }
+
+/* ── Palette: the 15 colors as chips, read down the columns ────────────── */
+.palette { container-type: inline-size; display: flex; flex-direction: column; gap: var(--space-4); }
+@media (max-width: 1023px), (max-height: 599px) { .palette { margin: var(--space-14) 0 0; } }
+
+/* Hex, RGB or HSL for every value. The current one is fg. */
+.formats { display: inline-flex; gap: var(--space-4); font-size: 14px; line-height: 20px; letter-spacing: 0; }
+.formats[hidden] { display: none; }
+.formats button {
   appearance: none; margin: 0; padding: 0; border: 0; background: none;
-  font: inherit; color: var(--ink-muted); cursor: pointer; transition: color 0.15s;
+  font: inherit; color: var(--fg-muted); cursor: pointer; transition: color 0.2s;
 }
-.tabs button:hover, .tabs button[aria-selected="true"] { color: var(--ink-bright); }
+.formats button:hover, .formats button[aria-pressed="true"] { color: var(--fg); }
 
-/* ── Palette table ────────────────────────────────────────────────────── */
-.swatch {
-  display: inline-block; width: 16px; height: 16px; margin-right: var(--space-2); vertical-align: -3px;
-  border-radius: var(--radius-sm); background: var(--c);
-  box-shadow: inset 0 0 0 1px var(--rule-strong);
+.chips { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--space-10); }
+@container (min-width: 440px) { .chips { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(8, auto); grid-auto-flow: column; } }
+@container (min-width: 700px) { .chips { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(5, auto); } }
+
+/* A chip copies its value; "Copied" sits over the value so nothing shifts. */
+.chip {
+  box-sizing: border-box; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-2);
+  width: 100%; padding: var(--space-1) 0; border: 0; background: none; appearance: none;
+  font: inherit; font-size: 15px; line-height: 24px; letter-spacing: 0; color: var(--fg); text-align: left; cursor: pointer;
 }
-.ec-table td.name { white-space: nowrap; }
-
-/* Color values copy on click; "Copied" sits over the value so the width never shifts. */
-.copy-value {
-  position: relative; appearance: none; margin: 0; padding: 0; border: 0; background: none;
-  font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--ink); white-space: nowrap;
-  cursor: pointer; transition: color 0.15s;
+.swatch { width: 14px; height: 14px; border-radius: 4px; background: var(--c); box-shadow: inset 0 0 0 1px var(--shade); }
+.chip-value {
+  position: relative; font-family: var(--font-mono); font-size: 13px; white-space: nowrap;
+  color: var(--fg-muted); transition: color 0.2s;
 }
-.copy-value:hover { color: var(--ink-bright); }
-.copy-value::after { content: "Copied"; position: absolute; left: 0; top: 0; color: var(--ink-bright); visibility: hidden; }
-.copy-value.copied span { visibility: hidden; }
-.copy-value.copied::after { visibility: visible; }
-
-/* ── Code ─────────────────────────────────────────────────────────────── */
-.ec-code pre { tab-size: 4; }
-
-/* The theme's 15 named colors (SPEC.md). The code preview uses these, scope for scope
-   as themes/helix/eyesclosed.toml maps them, overriding the bundle's older syntax colors. */
-:root {
-  --night: #111214; --lid: #1a1b21; --shade: #383b4a; --glow: #464957; --haze: #696d7d;
-  --ash: #9a9dae; --mist: #bbbcc7; --moon: #cdcfd1; --tide: #779bb0; --frost: #b7c8cb;
-  --blush: #d8d0d0; --linen: #d9cbae; --candle: #ecd8ae; --ember: #c18e5f; --flare: #ffaba2;
-}
-.ec-code { background: var(--lid); color: var(--mist); }
-.tok-function { color: var(--blush); }
-.tok-constant { color: var(--candle); }
-.tok-escape { color: var(--candle); font-weight: 500; }
-.tok-string { color: var(--linen); }
-.tok-type { color: var(--frost); }
-.tok-macro { color: var(--frost); font-style: italic; }
-.tok-variable, .tok-parameter { color: var(--mist); }
-.tok-lifetime { color: var(--mist); font-style: italic; }
-.tok-property, .tok-namespace, .tok-operator, .tok-builtin, .tok-attribute { color: var(--ash); }
-.tok-doc { color: var(--ash); font-style: italic; }
-.tok-keyword { color: var(--tide); font-weight: 500; }
-.tok-selfvar { color: var(--tide); font-style: italic; }
-.tok-comment { color: var(--haze); font-style: italic; }
-.tok-punct { color: var(--haze); }
+.chip:hover .chip-value { color: var(--fg); }
+.chip-value::after { content: "Copied"; position: absolute; right: 0; top: 0; color: var(--fg); visibility: hidden; }
+.chip.copied .v { visibility: hidden; }
+.chip.copied .chip-value::after { visibility: visible; }
