@@ -4,6 +4,7 @@
 :root { --bg: #111214; }
 
 .ec-hero { margin: 0; }
+.ec-hero .ec-quiet { white-space: nowrap; }
 
 /* ── One screen ───────────────────────────────────────────────────────────
    On desktops the landing is a single screen that never scrolls: the statement
@@ -23,7 +24,8 @@
 /* ── The panel: the wallpaper drifting left on its own, forever. The photo
    alternates with its mirror image, so every seam matches; the track holds two
    such pairs and slides by one pair, then starts over where it looks the same.
-   Desktops only; phones get the still photo under the hero. ── */
+   Desktops only; phones get the still photo under the hero. The photo is
+   moonrise.webp (1877px) and moonrise-1000.webp, for 1x screens and phones. ── */
 .scroll-panel { display: none; }
 .hero-photo { display: block; width: 100%; height: auto; margin-top: var(--space-10); border-radius: var(--radius-md); }
 @media (min-width: 1024px) {
@@ -33,7 +35,12 @@
     width: var(--ec-stage-w); border-radius: var(--radius-md); overflow: hidden;
   }
   .scroll-track { display: flex; width: max-content; height: 100%; animation: drift 120s linear infinite; }
-  .scroll-track img { display: block; flex: none; width: auto; height: 100%; max-width: none; }
+  /* Backgrounds rather than <img>, so only desktops download the photo, once for all four. */
+  .scroll-track span {
+    flex: none; height: 100%; aspect-ratio: 1877 / 2286;
+    background: url("moonrise.webp") center / cover;
+    background-image: image-set(url("moonrise-1000.webp") 1x, url("moonrise.webp") 2x);
+  }
   .scroll-track .flip { transform: scaleX(-1); }
   .hero-photo { display: none; }
 }
