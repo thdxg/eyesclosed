@@ -5,7 +5,7 @@ foreground = #BBBCC7
 cursor-color = #CDCFD1
 cursor-text = #111214
 selection-background = #383B4A
-selection-foreground = #D8D0D0
+selection-foreground = cell-foreground
 palette = 0=#383B4A
 palette = 1=#FFABA2
 palette = 2=#779BB0
