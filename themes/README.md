@@ -12,6 +12,7 @@ Every file here uses only the 15 colors in `../SPEC.md`. Paths below assume the 
 | bat            | `bat/eyesclosed.tmTheme`                 | Copy to `$(bat --config-dir)/themes/`, run `bat cache --build`, set `BAT_THEME=eyesclosed`                             |
 | delta          | `delta/eyesclosed.gitconfig`             | `[include] path = …` in `~/.gitconfig`, then `[delta] features = eyesclosed` (needs the bat theme)                     |
 | fzf            | `fzf/eyesclosed.sh`, `fzf/eyesclosed.nu` | Source the one for your shell                                                                                          |
+| gitui          | `gitui/eyesclosed.ron`                   | Copy it and `gitui/eyesclosed.tmTheme` to `~/.config/gitui/`, run `gitui -t eyesclosed.ron`                            |
 | lazygit        | `lazygit/eyesclosed.yml`                 | Append it to `LG_CONFIG_FILE` after your own config, or merge it into `config.yml`                                     |
 | tmux           | `tmux/eyesclosed.tmux.conf`              | `source-file` it from `~/.tmux.conf`                                                                                   |
 | Zed            | `zed/` (extension)                       | Run `zed: extensions`, install "eyesclosed", then pick it with `theme selector: toggle`                                |

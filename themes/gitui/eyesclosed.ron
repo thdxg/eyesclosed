@@ -1,0 +1,27 @@
+// eyesclosed: a minimal low-chroma theme
+
+(
+    selected_tab: Some("#779BB0"),
+    command_fg: Some("#BBBCC7"),
+    selection_bg: Some("#383B4A"),
+    selection_fg: Some("#BBBCC7"),
+    use_selection_fg: Some(false),
+    cmdbar_bg: Some("#1A1B21"),
+    disabled_fg: Some("#696D7D"),
+    diff_line_add: Some("#779BB0"),
+    diff_line_delete: Some("#C18E5F"),
+    diff_file_added: Some("#779BB0"),
+    diff_file_removed: Some("#C18E5F"),
+    diff_file_moved: Some("#B7C8CB"),
+    diff_file_modified: Some("#9A9DAE"),
+    commit_hash: Some("#B7C8CB"),
+    commit_time: Some("#696D7D"),
+    commit_author: Some("#9A9DAE"),
+    danger_fg: Some("#FFABA2"),
+    push_gauge_bg: Some("#779BB0"),
+    push_gauge_fg: Some("#111214"),
+    tag_fg: Some("#ECD8AE"),
+    branch_fg: Some("#779BB0"),
+    block_title_focused: Some("#CDCFD1"),
+    syntax: Some("eyesclosed"),
+)
