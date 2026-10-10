@@ -1,12 +1,4 @@
 # eyesclosed: a minimal low-chroma theme
-# Include from ~/.gitconfig:
-#   [include]
-#       path = ~/dev/eyesclosed/themes/delta/eyesclosed.gitconfig
-#   [delta]
-#       features = eyesclosed
-# Needs the bat theme installed (themes/bat) for syntax-theme.
-# Removed lines are drawn dim (haze, no syntax); added lines keep full syntax colors,
-# so the difference reads by brightness, not red vs green.
 
 [delta "eyesclosed"]
     dark = true

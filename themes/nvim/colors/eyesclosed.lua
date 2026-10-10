@@ -1,5 +1,4 @@
 -- eyesclosed: a minimal low-chroma theme
--- Put this file in ~/.config/nvim/colors/ (or add themes/nvim to runtimepath), then :colorscheme eyesclosed
 
 vim.cmd('highlight clear')
 if vim.fn.exists('syntax_on') == 1 then vim.cmd('syntax reset') end

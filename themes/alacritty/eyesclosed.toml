@@ -1,5 +1,4 @@
 # eyesclosed: a minimal low-chroma theme
-# In alacritty.toml:  [general] import = ["~/dev/eyesclosed/themes/alacritty/eyesclosed.toml"]
 
 [colors.primary]
 background = "#111214"

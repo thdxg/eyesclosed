@@ -1,6 +1,4 @@
 # eyesclosed: a minimal low-chroma theme
-# Copy to ~/.config/wezterm/colors/eyesclosed.toml, then in wezterm.lua:
-#   config.color_scheme = 'eyesclosed'
 
 [colors]
 foreground = "#BBBCC7"
