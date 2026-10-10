@@ -1,36 +1,35 @@
 # eyesclosed: a minimal low-chroma theme
-# Merge into ~/Library/Application Support/lazygit/config.yml (macOS)
-# or ~/.config/lazygit/config.yml.
+
 gui:
   theme:
     activeBorderColor:
-      - "#779BB0"
+      - "#779BB0" # tide
       - bold
     inactiveBorderColor:
-      - "#383B4A"
+      - "#383B4A" # shade
     searchingActiveBorderColor:
-      - "#ECD8AE"
+      - "#ECD8AE" # candle
       - bold
     optionsTextColor:
-      - "#9A9DAE"
+      - "#9A9DAE" # ash
     selectedLineBgColor:
-      - "#1A1B21"
+      - "#383B4A" # shade
     inactiveViewSelectedLineBgColor:
-      - "#1A1B21"
+      - "#1A1B21" # lid
     cherryPickedCommitFgColor:
-      - "#B7C8CB"
+      - "#ECD8AE" # candle
     cherryPickedCommitBgColor:
-      - "#383B4A"
+      - "#464957" # glow
     markedBaseCommitFgColor:
-      - "#B7C8CB"
+      - "#CDCFD1" # moon
     markedBaseCommitBgColor:
-      - "#383B4A"
+      - "#464957" # glow
     unstagedChangesColor:
-      - "#C18E5F"
+      - "#C18E5F" # ember
     defaultFgColor:
-      - "#BBBCC7"
+      - "#BBBCC7" # mist
   authorColors:
-    "*": "#9A9DAE"
+    "*": "#9A9DAE" # ash
 git:
   pagers:
     - colorArg: always
