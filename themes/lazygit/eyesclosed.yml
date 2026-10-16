@@ -28,9 +28,9 @@ gui:
       - "#C18E5F" # ember
     defaultFgColor:
       - "#BBBCC7" # mist
-  authorColors:
-    "*": "#9A9DAE" # ash
+    authorColors:
+      "*": "#9A9DAE" # ash
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark --paging=never
+      command: delta --dark --paging=never
