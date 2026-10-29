@@ -22,7 +22,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/website
+  IMAGE_NAME: ${{ github.repository }}/website
   LOCAL_IMAGE: localhost/website:ci
 
 # A superseded push is never worth finishing: the image it would publish is
