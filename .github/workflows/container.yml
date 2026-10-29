@@ -22,8 +22,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  LOCAL_IMAGE: localhost/eyesclosed-website:ci
+  IMAGE_NAME: ${{ github.repository_owner }}/website
+  LOCAL_IMAGE: localhost/website:ci
 
 # A superseded push is never worth finishing: the image it would publish is
 # already stale. In-flight PR builds are cancelled the same way.
